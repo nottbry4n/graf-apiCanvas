@@ -1,7 +1,13 @@
 function draw() {
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
+    const canvas = document.getElementById("canvas");
 
-    ctx.fillStyle = "green";
-    ctx.fillRect(10, 10, 100, 100);
+    if (canvas.getContext) {
+        const ctx = canvas.getContext("2d");
+
+        ctx.beginPath();
+        ctx.moveTo(75, 50);
+        ctx.lineTo(100, 75);
+        ctx.lineTo(100, 25);
+        ctx.fill();
+    }
 }
